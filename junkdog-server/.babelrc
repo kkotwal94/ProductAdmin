@@ -1,0 +1,12 @@
+{
+  "presets": ["env", "flow"],
+  "plugins": [
+    [
+      "transform-runtime",
+      {
+        "polyfill": true,
+        "regenerator": true
+      }
+    ]
+  ]
+}
