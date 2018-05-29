@@ -22,8 +22,11 @@ services:
     volumes:
       - ./junkdog-server:/usr/src/app/
     command: npm run dev
+    environment:
+      - CHOKIDAR_USEPOLLING=true
     links:
       - mongo
+
 
   ################################
   #   Setup front-end container
@@ -37,6 +40,9 @@ services:
     build: ./junkdog-client
     ports:
       - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
     links:
       - server
 
