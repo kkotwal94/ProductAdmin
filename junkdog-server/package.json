@@ -8,6 +8,8 @@
     "lint:js": "eslint . --fix",
     "format": "prettier --write '**/*.{js,css,md}'",
     "prepublish": "npm run-script build",
+    "quick-start": "npm run babel-node ./server/server",
+    "quick-build-start": "npm run build:dev && node compiled/server.dev.js",
     "start": "npm run-script build && cross-env NODE_ENV=production node compiled/server.js",
     "dev": "cross-env NODE_ENV=development nodemon",
     "build:dev": "cross-env NODE_ENV=development npm run webpack -- --env.server",
