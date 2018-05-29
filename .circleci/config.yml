@@ -10,7 +10,7 @@ jobs:
       - run:
           name: update-npm
           command: 'npm install -g npm@latest'
-      - restore_cache
+      - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: install-npm
@@ -27,8 +27,10 @@ jobs:
           paths:
             - ./junkdog-server/node_modules
       - run:
-          name: test
-          command: cd junkdog-cient && npm run test
+          name: "Run Tests"
+          command: cd junkdog-cient && npm run test --ci --runInBand --testResultsProcessor="jest-junit"
+          environment:
+            JEST_JUNIT_OUTPUT: "reports/jest/results.xml"
       - store_artifacts:
           path: test-results.xml
           prefix: tests
@@ -36,4 +38,4 @@ jobs:
           path: coverage
           prefix: coverage
       - store_test_results:
-          path: test-results.xml
+          path: reports
