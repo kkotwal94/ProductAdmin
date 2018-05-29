@@ -1,7 +1,7 @@
 import moment from 'moment';
 
 export const db =
-  process.env.MONGOHQ_URL || process.env.MONGODB_URI || 'mongodb://localhost/Products';
+  process.env.MONGOHQ_URL || process.env.MONGODB_URI || 'mongodb://Product-Admin-Mongo/Products';
 
 export const currentUTC = moment
   .utc()
