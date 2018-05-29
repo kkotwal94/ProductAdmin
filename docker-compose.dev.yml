@@ -1,0 +1,48 @@
+version: '3'
+
+services:
+  ################################
+  #   Setup Mongo container
+  ################################
+  mongo:
+    container_name: Product-Admin-Mongo
+    image: mongo:latest
+    restart: always
+    volumes:
+      - ./data/db:/data/db
+    expose:
+      - 27017
+    ports:
+      - 27017:27017
+  ################################
+  #   Setup node container
+  ################################
+  server:
+    container_name: Product-Admin-Server
+    build: ./junkdog-server
+    expose:
+      - 3001
+    ports:
+      - 3001:3001
+    volumes:
+      - ./junkdog-server:/usr/src/app/
+    command: npm run dev
+    links:
+      - mongo
+    depends_on:
+      - mongo
+
+  ################################
+  #   Setup front-end container
+  ################################
+  client:
+    container_name: Product-Admin-Client
+    volumes:
+      - ./junkdog-client/src:/usr/src/app/src
+      - ./junkdog-client/public:/usr/src/app/public
+    command: npm run start
+    build: ./junkdog-client
+    ports:
+      - 3000:3000
+    links:
+      - server
