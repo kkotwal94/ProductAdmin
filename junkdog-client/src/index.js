@@ -14,12 +14,20 @@ import createRoutes from "./routes";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import registerServiceWorker from "./registerServiceWorker";
 
+/**
+ * Main Class
+ * @param {number} input any number
+ */
 class Main extends Component {
   render() {
     return <BrowserRouter>{routes}</BrowserRouter>;
   }
 }
 
+/**
+ * Generating Global Theme
+ * @type {[type]}
+ */
 const theme = createMuiTheme({
   palette: {
     primary: indigo,
