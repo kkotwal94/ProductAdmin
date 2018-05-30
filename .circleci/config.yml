@@ -28,11 +28,14 @@ jobs:
           command: cd junkdog-client && npm run test --ci --runInBand --testResultsProcessor="jest-junit"
           environment:
             JEST_JUNIT_OUTPUT: "reports/jest/results.xml"
+      - run:
+          name: "Flow Code Coverage"
+          command: cd junkdog-client && npm run flow:coverage
       - store_artifacts:
           path: test-results.xml
           prefix: tests
       - store_artifacts:
-          path: coverage
+          path: coverage.xml
           prefix: coverage
       - store_test_results:
           path: reports

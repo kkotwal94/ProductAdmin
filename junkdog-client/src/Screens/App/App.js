@@ -1,31 +1,35 @@
-import React, { Component } from 'react';
-import { Switch } from 'react-router';
-import { Route } from 'react-router-dom';
-import Home from './Home';
-import Dashboard from './Dashboard';
-import Navigation from '../../Components/Navigation';
-import AppLayout from '../../Layout/AppLayout';
-import Sidebar from '../../Components/Sidebar/Sidebar';
-import Content from '../../Components/Content';
-import SidebarContext from '../../Context/SidebarContext';
+import React, { Component } from "react";
+import { Switch } from "react-router";
+import { Route } from "react-router-dom";
+import Home from "./Home";
+import Dashboard from "./Dashboard";
+import Navigation from "../../Components/Navigation";
+import AppLayout from "../../Layout/AppLayout";
+import Sidebar from "../../Components/Sidebar/Sidebar";
+import Content from "../../Components/Content";
+import SidebarContext from "../../Context/SidebarContext";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      sideBarOpen: true,
+      sideBarOpen: true
     };
   }
 
+  /**
+   * Opens sidebar
+   * @return {number} [True or false for state]
+   */
   handleDrawerOpen = () => {
     this.setState(state => ({
-      sideBarOpen: true,
+      sideBarOpen: true
     }));
   };
 
   handleDrawerClose = () => {
     this.setState(state => ({
-      sideBarOpen: false,
+      sideBarOpen: false
     }));
   };
 
@@ -34,7 +38,10 @@ class App extends Component {
     return (
       <AppLayout>
         <SidebarContext.Provider value={sideBarOpen}>
-          <Navigation title="Product Admin" handleDrawerOpen={this.handleDrawerOpen} />
+          <Navigation
+            title="Product Admin"
+            handleDrawerOpen={this.handleDrawerOpen}
+          />
           <Sidebar handleDrawerClose={this.handleDrawerClose} />
         </SidebarContext.Provider>
         <Content>
