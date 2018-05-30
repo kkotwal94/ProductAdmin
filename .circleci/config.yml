@@ -30,7 +30,7 @@ jobs:
             JEST_JUNIT_OUTPUT: "reports/jest/results.xml"
       - run:
           name: "Flow Client Code Coverage"
-          command: cd junkdog-client && npm run flow:coverage
+          command: cd junkdog-client && npm run flow:ci
       - store_artifacts:
           path: test-results.xml
           prefix: tests
