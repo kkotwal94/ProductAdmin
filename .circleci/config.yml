@@ -39,3 +39,8 @@ jobs:
           prefix: coverage
       - store_test_results:
           path: reports
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build
