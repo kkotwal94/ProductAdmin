@@ -27,7 +27,7 @@ jobs:
             - ./junkdog-server/node_modules
       - run:
           name: "Run Tests"
-          command: cd junkdog-cient && npm run test --ci --runInBand --testResultsProcessor="jest-junit"
+          command: cd junkdog-client && npm run test --ci --runInBand --testResultsProcessor="jest-junit"
           environment:
             JEST_JUNIT_OUTPUT: "reports/jest/results.xml"
       - store_artifacts:
