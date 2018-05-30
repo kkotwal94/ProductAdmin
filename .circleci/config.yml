@@ -10,7 +10,7 @@ jobs:
           name: "Update NPM"
           command: 'sudo npm install -g npm@latest'
       - run:
-          name: "Install Dependencies"
+          name: "Install Client Dependencies"
           command: cd junkdog-client && npm install
       - save_cache:
           key: dependency-cache-{{ checksum "junkdog-client/package.json" }}
@@ -24,12 +24,12 @@ jobs:
           paths:
             - junkdog-server/node_modules
       - run:
-          name: "Run Tests"
+          name: "Run Client Tests"
           command: cd junkdog-client && npm run test --ci --runInBand --testResultsProcessor="jest-junit"
           environment:
             JEST_JUNIT_OUTPUT: "reports/jest/results.xml"
       - run:
-          name: "Flow Code Coverage"
+          name: "Flow Client Code Coverage"
           command: cd junkdog-client && npm run flow:coverage
       - store_artifacts:
           path: test-results.xml
