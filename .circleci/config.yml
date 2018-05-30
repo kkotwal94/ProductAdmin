@@ -15,16 +15,16 @@ jobs:
           name: "Install Dependencies"
           command: cd junkdog-client && npm install
       - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          key: dependency-cache-{{ checksum "junkdog-client/package.json" }}
           paths:
-            - ./junkdog-client/node_modules
+            - junkdog-client/node_modules
       - run:
           name: "Install Server Dependencies"
           command: cd junkdog-server && npm install
       - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          key: dependency-cache-{{ checksum "junkdog-server/package.json" }}
           paths:
-            - ./junkdog-server/node_modules
+            - junkdog-server/node_modules
       - run:
           name: "Run Tests"
           command: cd junkdog-client && npm run test --ci --runInBand --testResultsProcessor="jest-junit"
