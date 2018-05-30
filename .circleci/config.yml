@@ -39,6 +39,15 @@ jobs:
             JEST_JUNIT_OUTPUT: "reports/jest/results.xml"
       - store_test_results:
           path: reports
+      - run:
+          name: "Server Prettier Check"
+          command: cd junkdog-server && npm run check-code-format
+      - run:
+          name: "Server Lint Check"
+          command: "cd junkdog-server && npm run lint"
+      - run:
+          name: "Flow Server Code Coverage"
+          command: cd junkdog-server && npm run flow:ci
 workflows:
   version: 2
   build:

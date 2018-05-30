@@ -16,7 +16,7 @@ import { createHttpLink } from 'apollo-link-http';
 import { StaticRouter } from 'react-router';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import createRoutes from '../../app/routes';
+import createRoutes from '../../../junkdog-client/src/routes';
 import staticAssets from './static-assets';
 
 const routes = createRoutes();

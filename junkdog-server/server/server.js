@@ -29,6 +29,11 @@ initRoutes(app);
   renderSSR(req, res);
 });
 */
+
+/**
+ * Starting Server
+ * @type {string}
+ */
 app.listen(app.get('port'), () => {
   //const addr = app.address();
   console.log(`GraphiQL is now running on localhost:${app.get('port')}/graphiql`);

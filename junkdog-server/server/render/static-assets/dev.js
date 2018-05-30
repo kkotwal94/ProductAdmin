@@ -1,7 +1,7 @@
 import { GOOGLE_ANALYTICS_ID } from '../../../config/app';
-import appleIcon from '../../../app/Images/apple-touch-icon.png';
-import printflyIcon from '../../../app/Images/printfly-favricon-16.png';
-import biggerPrintflyIcon from '../../../app/Images/printfly-favricon-32.png';
+import appleIcon from '../../../../junkdog-client/src/Images/apple-touch-icon.png';
+import printflyIcon from '../../../../junkdog-client/src/Images/printfly-favricon-16.png';
+import biggerPrintflyIcon from '../../../../junkdog-client/src/Images/printfly-favricon-32.png';
 
 const createAppScript = () =>
   '<script async type="text/javascript" charset="utf-8" src="/assets/app.js"></script>';
