@@ -38,22 +38,24 @@
     "docs:build:md": "documentation build src/** -f md -o markdown.md",
     "flow:init": "flow init",
     "flow": "flow check",
-    "flow:coverage":
-      "flow-coverage-report -i src/**/*.js -i src/**/*.jsx -t text --threshold 90",
-    "flow:ci":
-      "flow-coverage-report -i 'src/**/*.js' -i 'src/**/*.jsx' -t text --threshold 10",
+    "flow:coverage": "flow-coverage-report -i src/**/*.js -i src/**/*.jsx -t text --threshold 90",
+    "flow:ci": "flow-coverage-report -i 'src/**/*.js' -i 'src/**/*.jsx' -t text --threshold 10",
     "jest": "jest",
     "prettier:format": "prettier --write **/*.{js,css,md}",
     "lint:fix": "eslint src --fix",
     "lint": "eslint src",
-    "check-code-format": "prettier-check src/**/*.js"
+    "check-code-format": "prettier-check src/**/*.js",
+    "code:cover": "istanbul cover src"
   },
   "proxy": "http://localhost:3001/",
   "devDependencies": {
+    "babel-plugin-istanbul": "^4.1.6",
     "eslint-plugin-prettier": "^2.6.0",
     "flow-bin": "^0.73.0",
     "flow-coverage-report": "^0.5.0",
     "flow-typed": "^2.4.0",
+    "istanbul": "^0.4.5",
+    "nyc": "^11.8.0",
     "prettier": "^1.13.2"
   }
 }
