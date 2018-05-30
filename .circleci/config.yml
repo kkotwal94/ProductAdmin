@@ -28,7 +28,7 @@ jobs:
           command: cd junkdog-client && npm run check-code-format
       - run:
           name: "Client Lint Check"
-          command: "npm run lint"
+          command: "cd junkdog-client && npm run lint"
       - run:
           name: "Flow Client Code Coverage"
           command: cd junkdog-client && npm run flow:ci
