@@ -15,6 +15,7 @@
     "lodash": "^4.17.10",
     "moment": "^2.22.1",
     "numeral": "^2.0.6",
+    "prettier-check": "^2.0.0",
     "prop-types": "^15.6.1",
     "react": "^16.4.0",
     "react-apollo": "^2.1.4",
@@ -41,7 +42,11 @@
       "flow-coverage-report -i src/**/*.js -i src/**/*.jsx -t text --threshold 90",
     "flow:ci":
       "flow-coverage-report -i 'src/**/*.js' -i 'src/**/*.jsx' -t text --threshold 10",
-    "jest": "jest"
+    "jest": "jest",
+    "prettier:format": "prettier --write **/*.{js,css,md}",
+    "lint:fix": "eslint src --fix",
+    "lint": "eslint src",
+    "check-code-format": "prettier-check src/**/*.js"
   },
   "proxy": "http://localhost:3001/",
   "devDependencies": {

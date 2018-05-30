@@ -24,19 +24,19 @@ jobs:
           paths:
             - junkdog-server/node_modules
       - run:
+          name: "Client Prettier Check"
+          command: cd junkdog-client && npm run check-code-format
+      - run:
+          name: "Client Lint Check"
+          command: "npm run lint"
+      - run:
+          name: "Flow Client Code Coverage"
+          command: cd junkdog-client && npm run flow:ci
+      - run:
           name: "Run Client Tests"
           command: cd junkdog-client && npm run test --ci --runInBand --testResultsProcessor="jest-junit"
           environment:
             JEST_JUNIT_OUTPUT: "reports/jest/results.xml"
-      - run:
-          name: "Flow Client Code Coverage"
-          command: cd junkdog-client && npm run flow:ci
-      - store_artifacts:
-          path: test-results.xml
-          prefix: tests
-      - store_artifacts:
-          path: coverage.xml
-          prefix: coverage
       - store_test_results:
           path: reports
 workflows:

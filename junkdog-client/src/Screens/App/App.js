@@ -38,10 +38,7 @@ class App extends Component {
     return (
       <AppLayout>
         <SidebarContext.Provider value={sideBarOpen}>
-          <Navigation
-            title="Product Admin"
-            handleDrawerOpen={this.handleDrawerOpen}
-          />
+          <Navigation title="Product Admin" handleDrawerOpen={this.handleDrawerOpen} />
           <Sidebar handleDrawerClose={this.handleDrawerClose} />
         </SidebarContext.Provider>
         <Content>

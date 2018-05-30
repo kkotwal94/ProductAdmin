@@ -2,7 +2,7 @@
 
 ### Table of Contents
 
--   [handleDrawerOpen][1]
+- [handleDrawerOpen][1]
 
 ## handleDrawerOpen
 
@@ -11,5 +11,4 @@ Opens sidebar
 Returns **[number][2]** [True or false for state]
 
 [1]: #handledraweropen
-
 [2]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number

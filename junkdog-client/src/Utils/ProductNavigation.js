@@ -1,60 +1,60 @@
-import BrandIcon from '@material-ui/icons/Loyalty';
-import CategoryIcon from '@material-ui/icons/Group';
-import DashboardIcon from '@material-ui/icons/Dashboard';
-import ProductIcon from '@material-ui/icons/ShoppingCart';
-import SizeIcon from '@material-ui/icons/Straighten';
-import SupplierIcon from '@material-ui/icons/Place';
-import LogoutIcon from '@material-ui/icons/ExitToApp';
-import FAQIcon from '@material-ui/icons/Info';
-import FlynetIcon from '@material-ui/icons/MonetizationOn';
+import BrandIcon from "@material-ui/icons/Loyalty";
+import CategoryIcon from "@material-ui/icons/Group";
+import DashboardIcon from "@material-ui/icons/Dashboard";
+import ProductIcon from "@material-ui/icons/ShoppingCart";
+import SizeIcon from "@material-ui/icons/Straighten";
+import SupplierIcon from "@material-ui/icons/Place";
+import LogoutIcon from "@material-ui/icons/ExitToApp";
+import FAQIcon from "@material-ui/icons/Info";
+import FlynetIcon from "@material-ui/icons/MonetizationOn";
 
 export const navigationOptions = [
   {
-    name: 'Brands',
+    name: "Brands",
     icon: BrandIcon,
-    url: '/brand',
+    url: "/brand"
   },
   {
-    name: 'Categories',
+    name: "Categories",
     icon: CategoryIcon,
-    url: '/category',
+    url: "/category"
   },
   {
-    name: 'Dashboard',
+    name: "Dashboard",
     icon: DashboardIcon,
-    url: '/dashboard',
+    url: "/dashboard"
   },
   {
-    name: 'Products',
+    name: "Products",
     icon: ProductIcon,
-    url: '/product',
+    url: "/product"
   },
   {
-    name: 'Sizes',
+    name: "Sizes",
     icon: SizeIcon,
-    url: '/size',
+    url: "/size"
   },
   {
-    name: 'Suppliers',
+    name: "Suppliers",
     icon: SupplierIcon,
-    url: '/supplier',
-  },
+    url: "/supplier"
+  }
 ];
 
 export const defaultOptions = [
   {
-    name: 'Sign out',
+    name: "Sign out",
     icon: LogoutIcon,
-    url: null,
+    url: null
   },
   {
-    name: 'FAQ',
+    name: "FAQ",
     icon: FAQIcon,
-    url: '/faq',
+    url: "/faq"
   },
   {
-    name: 'Flynet',
+    name: "Flynet",
     icon: FlynetIcon,
-    url: 'printfly.com',
-  },
+    url: "printfly.com"
+  }
 ];
